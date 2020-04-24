@@ -21,6 +21,7 @@ dependencies:
     sdk: flutter
   image_picker: ^0.6.3+4
   rflutter_alert: ^1.0.3
+  dio: ^3.0.9
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -44,9 +45,9 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - assets/home_icon.png
   #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg
-    - assets/wash.gif
     
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -60,7 +61,17 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
+  fonts:
+    - family: DancingScript
+      fonts:
+        - asset : assets/fonts/DancingScript-Regular.ttf
+          weight: 400
+        - asset : assets/fonts/DancingScript-Medium.ttf
+          weight: 500
+        - asset : assets/fonts/DancingScript-SemiBold.ttf
+          weight: 600
+        - asset : assets/fonts/DancingScript-Bold.ttf
+          weight: 700        
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf

@@ -67,27 +67,28 @@ class StaggerAnimation extends StatelessWidget {
             tag: "fade",
             child: buttomZoomOut.value <= 300
                 ? new Container(
-                    width: buttomZoomOut.value == 70
+                    width: MediaQuery.of(context).size.width,
+                    /*buttomZoomOut.value == 70
                         ? buttonSqueezeanimation.value
-                        : buttomZoomOut.value,
+                        : buttomZoomOut.value,*/
                     height:
                         buttomZoomOut.value == 70 ? 60.0 : buttomZoomOut.value,
                     alignment: FractionalOffset.center,
                     decoration: new BoxDecoration(
                       color: /*const Color.fromRGBO(247, 64, 106, 1.0),*/
                           Color(0xff688f4e),
-                      borderRadius: buttomZoomOut.value < 400
+                      /*borderRadius: buttomZoomOut.value < 400
                           ? new BorderRadius.all(const Radius.circular(30.0))
-                          : new BorderRadius.all(const Radius.circular(0.0)),
+                          : new BorderRadius.all(const Radius.circular(0.0)),*/
                     ),
                     child: buttonSqueezeanimation.value > 75.0
                         ? new Text(
                             "Start",
                             style: new TextStyle(
                               color: /*Colors.white,*/ Color(0xfff4f1e9),
-                              fontSize: 20.0,
-                              fontWeight: FontWeight.w300,
-                              letterSpacing: 0.3,
+                              fontSize: 30.0,
+                              fontWeight: FontWeight.w400,
+                              letterSpacing: 5,
                             ),
                           )
                         : buttomZoomOut.value < 300.0

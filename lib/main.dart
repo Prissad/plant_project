@@ -5,8 +5,8 @@ import 'package:plant_project/views/picture/picture.dart';
 void main() {
   runApp(
     MaterialApp(
-      home: new MyApp(),
-      title: 'Plant Disease Recognition',
+      home: new Home(),
+      title: 'Plant Disease Classification',
       debugShowCheckedModeBanner: false,
       routes: {
         //'/': (context) => Home(),
@@ -17,7 +17,7 @@ void main() {
   );
 }
 
-class MyApp extends StatefulWidget {
+/*class MyApp extends StatefulWidget {
   @override
   _MyAppState createState() => new _MyAppState();
 }
@@ -37,14 +37,15 @@ class _MyAppState extends State {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-        resizeToAvoidBottomInset: false,
         backgroundColor: Colors.white,
         body: Container(
-            height: double.infinity,
-            width: double.infinity,
-            child: Image.asset(
+          height: double.infinity,
+          width: double.infinity,
+          child:
+              null, /*Image.asset(              
               "assets/wash.gif",
               gaplessPlayback: true,
-            )));
+            )*/
+        ));
   }
-}
+}*/

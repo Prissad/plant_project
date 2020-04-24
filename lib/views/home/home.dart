@@ -10,10 +10,11 @@ class Home extends StatefulWidget {
 
 class _HomePageState extends State<Home> with TickerProviderStateMixin {
   AnimationController _loginButtonController;
-  var animationStatus = 0;
+  var animationStatus;
 
   @override
   void initState() {
+    animationStatus = 1;
     _loginButtonController = new AnimationController(
         duration: new Duration(milliseconds: 3000), vsync: this);
     super.initState();
@@ -63,8 +64,7 @@ class _HomePageState extends State<Home> with TickerProviderStateMixin {
       onWillPop: _onWillPop,
       child: SafeArea(
         child: new Scaffold(
-          body: Center(
-              child: new Container(
+          body: new Container(
             height: deviceHeight,
             width: deviceWidth,
             decoration: new BoxDecoration(
@@ -83,29 +83,51 @@ class _HomePageState extends State<Home> with TickerProviderStateMixin {
                   begin: const FractionalOffset(0.0, 0.0),
                   end: const FractionalOffset(0.0, 1.0),
                 )),
-                child: new Stack(
-                    alignment: AlignmentDirectional.bottomCenter,
-                    children: <Widget>[
-                      Container(
-                        child: new Button(),
-                      ),
-                      animationStatus == 0
-                          ? new Padding(
-                              padding: const EdgeInsets.only(bottom: 50.0),
-                              child: new InkWell(
-                                onTap: () {
-                                  setState(() {
-                                    animationStatus = 1;
-                                  });
-                                  _playAnimation();
-                                },
-                                //child: ,
-                              ),
-                            )
-                          : new StaggerAnimation(
-                              buttonController: _loginButtonController.view),
-                    ])),
-          )),
+                child: ListView(
+                  children: <Widget>[
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        new Stack(children: <Widget>[
+                          //new Button(),*/
+                          animationStatus == 0
+                              ? new Padding(
+                                  padding: const EdgeInsets.only(bottom: 50.0),
+                                  child: new InkWell(
+                                    onTap: () {
+                                      setState(() {
+                                        animationStatus = 1;
+                                      });
+                                      _playAnimation();
+                                    },
+                                  ),
+                                )
+                              : new StaggerAnimation(
+                                  buttonController:
+                                      _loginButtonController.view),
+                        ]),
+                        Container(
+                          width: deviceWidth * 0.9,
+                          child:
+                              Image(image: AssetImage('assets/home_icon.png')),
+                        ),
+                        Container(
+                            width: deviceWidth * 0.9,
+                            child: Text(
+                              'Plant Disease Classification',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontFamily: 'DancingScript',
+                                  fontSize: 60,
+                                  fontWeight: FontWeight.w700),
+                            )),
+                      ],
+                    ),
+                    //),
+                    //new Spacer(),
+                  ],
+                )),
+          ),
         ),
       ),
     ));
