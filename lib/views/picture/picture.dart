@@ -306,20 +306,31 @@ class _PictureState extends State<Picture> {
                                                           ],
                                                         ),
                                                         Row(
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .center,
                                                           children: <Widget>[
-                                                            Text(
-                                                              result != null
-                                                                  ? result
-                                                                  : 'No result',
-                                                              style: TextStyle(
-                                                                  fontSize: 22,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold),
-                                                            )
+                                                            Container(
+                                                                width:
+                                                                    deviceWidth -
+                                                                        100,
+                                                                child: Center(
+                                                                    child: SingleChildScrollView(
+                                                                        child: Text(
+                                                                  result != null
+                                                                      ? result
+                                                                      : 'No result',
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  overflow:
+                                                                      TextOverflow
+                                                                          .ellipsis,
+                                                                  maxLines: 3,
+                                                                  style: TextStyle(
+                                                                      fontSize:
+                                                                          22,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .bold),
+                                                                ))))
                                                           ],
                                                         ),
                                                         SizedBox(
